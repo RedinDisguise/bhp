@@ -101,7 +101,7 @@ def hexdump(src, length=16):
         text = b''.join([x if 0x20 <= ord(x) < 0x7F else b'.' for x in s])
         result.append( b"%04X %-*s %s" % (i, length*(digits + 1), hexa, text))
     print b'\n'.join(result)
-def receive_from(connect):
+def receive_from(connection):
     buffer = ""
     
     # We set a 2 second timeout; depending on target this may need to be adjusted.
